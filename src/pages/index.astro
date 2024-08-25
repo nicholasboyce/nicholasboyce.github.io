@@ -1,4 +1,5 @@
 ---
+import SkipLink from "../components/SkipLink.astro";
 const mainContent = 'main-content';
 ---
 
@@ -12,7 +13,38 @@ const mainContent = 'main-content';
 	</head>
 	<body>
 		<header>
-			
+			<SkipLink mainContent={mainContent} />
+			<nav>
+				<ul>
+					<li>Projects</li>
+					<li>Blog</li>
+					<li>About</li>
+				</ul>
+			</nav>
 		</header>
+		<main id={mainContent}>
+			<section id="hero" aria-labelledby="hero-heading">
+				<h1 id="hero-heading">Hi! I'm Nick.</h1>
+				<p class="section-body">
+					I’m a <span class="value-word">curious</span>, <span class="value-word">driven</span>, and <span class="value-word">inquisitive</span> software engineer.
+					<br/>
+					I value <span class="value-word">empathy</span> and <span class="value-word">connection</span>, and thrive in teams with great purpose and communication.
+					<br/>
+					I love making a <span class="value-word">positive impact</span> and being surrounded by those who care - and that’s probably you!
+				</p>
+				<picture class="main-headshot">
+					<source media="(max-width:924px)" srcset=""/>
+					<source media="(min-width:925px)" srcset=""/>
+					<img src="../../public/Nick_minified.jpg" alt="Headshot of Nick in a white and light pink striped dress shirt."/>
+				</picture>
+			</section>
+			<section id="projects" aria-labelledby="projects-heading">
+				<h1 id="projects-heading">Projects I've Done</h1>
+			</section>
+			<section id="about" aria-labelledby="about-heading">
+				<h1 id="about-heading">My Story</h1>
+			</section>
+		</main>
+		<footer></footer>
 	</body>
 </html>
