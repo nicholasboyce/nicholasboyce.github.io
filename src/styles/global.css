@@ -1,0 +1,102 @@
+:root {
+    --ff-heading: 'merriweatherregular', system-ui, serif;
+    --ff-primary: 'merriweather', system-ui, sans-serif;
+}
+
+@font-face {
+    font-family: 'merriweatherregular';
+    src: url('/fonts/merriweather-regular-webfont.woff2') format('woff2'),
+         url('/fonts/merriweather-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'merriweatheritalic';
+    src: url('/fonts/merriweather-italic-webfont.woff2') format('woff2'),
+         url('/fonts/merriweather-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'merriweatherbold';
+    src: url('/fonts/merriweather-bold-webfont.woff2') format('woff2'),
+         url('/fonts/merriweather-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'merriweather_sansregular';
+    src: url('/fonts/merriweathersans-regular-webfont.woff2') format('woff2'),
+         url('/fonts/merriweathersans-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'merriweather_sansitalic';
+    src: url('/fonts/merriweathersans-italic-webfont.woff2') format('woff2'),
+         url('/fonts/merriweathersans-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'merriweather_sansbold';
+    src: url('/fonts/merriweathersans-bold-webfont.woff2') format('woff2'),
+         url('/fonts/merriweathersans-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+  
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+  
+html {
+    scroll-behavior: smooth;
+}
+  
+body {
+    min-height: 100svh;
+    font-family: var(--ff-primary);
+}
+  
+img {
+    vertical-align: middle;
+    max-width: 100%;
+    font-style: italic;
+    height: auto;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--ff-heading);
+}
+
+section {
+    display: grid;
+}
+
+.nav-links {
+    display: flex;
+}
