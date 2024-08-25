@@ -1,5 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import headshot from '../assets/Nick_minified.jpg';
 const pageTitle = 'Nicholas Boyce-Software Engineer';
 ---
 
@@ -9,16 +11,14 @@ const pageTitle = 'Nicholas Boyce-Software Engineer';
 		<p class="section-body">
 			I’m a <span class="value-word">curious</span>, <span class="value-word">driven</span>, and <span class="value-word">inquisitive</span> software engineer.
 			<br/>
-			I value <span class="value-word">empathy</span> and <span class="value-word">connection</span>, and thrive in teams with great communication and a <span class="value-word">growth mindset</span>.
+			I value <span class="value-word">empathy</span> and <span class="value-word">connection</span>, and thrive in teams that prioritize a <span class="value-word">growth mindset</span>.
 			<br/>
 			I love making a <span class="value-word">positive impact</span> and being surrounded by those who care - and that’s probably you!
 		</p>
-		<img 
+		<Image 
 			class="main-headshot" 
-			src="/Nick_minified.jpg" 
-			alt="Headshot of Nick in a white and light pink striped dress shirt."
-			width="1850"
-			height="2312"/>
+			src={headshot}
+			alt="Headshot of Nick in a white and light pink striped dress shirt." />
 	</section>
 	<section id="projects" aria-labelledby="projects-heading">
 		<h1 id="projects-heading">Projects I've Done</h1>
