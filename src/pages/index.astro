@@ -1,15 +1,16 @@
 ---
 import SkipLink from "../components/SkipLink.astro";
 const mainContent = 'main-content';
+const pageTitle = 'Nicholas Boyce-Software Engineer';
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/favicon_headshot.jpg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Nicholas Boyce-Software Engineer</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
 		<header>
@@ -35,14 +36,16 @@ const mainContent = 'main-content';
 				<picture class="main-headshot">
 					<source media="(max-width:924px)" srcset=""/>
 					<source media="(min-width:925px)" srcset=""/>
-					<img src="../../public/Nick_minified.jpg" alt="Headshot of Nick in a white and light pink striped dress shirt."/>
+					<img src="/Nick_minified.jpg" alt="Headshot of Nick in a white and light pink striped dress shirt."/>
 				</picture>
 			</section>
 			<section id="projects" aria-labelledby="projects-heading">
 				<h1 id="projects-heading">Projects I've Done</h1>
+				<p class="section-body"></p>
 			</section>
 			<section id="about" aria-labelledby="about-heading">
 				<h1 id="about-heading">My Story</h1>
+				<p class="section-body"></p>
 			</section>
 		</main>
 		<footer></footer>
