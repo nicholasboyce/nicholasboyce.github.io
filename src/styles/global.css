@@ -121,10 +121,30 @@ h3 {
     font-family: var(--ff-heading);
 }
 
-section {
-    display: grid;
-}
-
 .nav-links {
     display: flex;
+}
+
+.content-grid {
+    --padding-inline: var(--gap-500);
+    --content-max-width: 70ch;
+
+    display: grid;
+    grid-template-columns: 
+    [full-width-start]
+    minmax(var(--padding-inline), 1fr)
+    [content-start]
+    repeat(10, min((100% - (var(--padding-inline) * 2)) / 10, var(--content-max-width) / 10))
+    [content-end]
+    minmax(var(--padding-inline), 1fr)
+    [full-width-end];
+}
+
+.content-grid > :not(.full-width) {
+    grid-column: content;
+    min-width: 0;
+}
+
+.content-grid > .full-width {
+    grid-column: full-width;
 }
