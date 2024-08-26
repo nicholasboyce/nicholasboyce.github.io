@@ -6,6 +6,9 @@
     --clr-neutral-1000: hsl(0, 0%, 10%);
     --clr-neutral-1100: hsl(0, 0%, 0%);
 
+    --main-background-color: var(--clr-neutral-100);
+    --main-text-color: var(--clr-neutral-1100);
+
     --clr-accent-pink: hsl(306, 98%, 76%);
     --clr-accent-orange: hsl(0, 78%, 78%);
     --clr-accent-yellow: hsl(61, 98%, 82%);
@@ -125,15 +128,17 @@
 html {
     scroll-behavior: smooth;
 }
+
+html.dark {
+    --main-background-color: var(--clr-neutral-1000);
+    --main-text-color: var(--clr-neutral-100);
+}
   
 body {
     min-height: 100svh;
     font-family: var(--ff-primary);
-}
-
-.dark body {
-    background-color: var(--clr-neutral-1000);
-    color: var(--clr-neutral-100);
+    background-color: var(--main-background-color);
+    color: var(--main-text-color);
 }
 
 img {
