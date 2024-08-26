@@ -1,6 +1,6 @@
 :root {
-    --ff-heading: 'merriweatherregular', system-ui, serif;
-    --ff-primary: 'merriweather', system-ui, sans-serif;
+    --ff-heading: 'merriweatherlight', system-ui, serif;
+    --ff-primary: 'merriweather_sanslight', system-ui, sans-serif;
 
     --fs-100: 0.75rem;
     --fs-200: 0.875rem;
@@ -12,6 +12,7 @@
     --fs-825: 2.25rem;
     --fs-900: 3rem;
     --fs-1000: 3.375rem;
+    --fs-1200: 4rem;
   
     --gap-100: 0.25rem;
     --gap-200: 0.5rem;
@@ -48,6 +49,15 @@
 }
 
 @font-face {
+    font-family: 'merriweatherlight';
+    src: url('/fonts/merriweather-light-webfont.woff2') format('woff2'),
+         url('/fonts/merriweather-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
     font-family: 'merriweatherbold';
     src: url('/fonts/merriweather-bold-webfont.woff2') format('woff2'),
          url('/fonts/merriweather-bold-webfont.woff') format('woff');
@@ -77,6 +87,15 @@
          url('/fonts/merriweathersans-bold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+}
+
+@font-face {
+    font-family: 'merriweather_sanslight';
+    src: url('/fonts/merriweathersans-light-webfont.woff2') format('woff2'),
+         url('/fonts/merriweathersans-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
 * {
@@ -121,13 +140,9 @@ h3 {
     font-family: var(--ff-heading);
 }
 
-.nav-links {
-    display: flex;
-}
-
 .content-grid {
     --padding-inline: var(--gap-500);
-    --content-max-width: 70ch;
+    --content-max-width: 100ch;
 
     display: grid;
     grid-template-columns: 
@@ -147,8 +162,4 @@ h3 {
 
 .content-grid > .full-width {
     grid-column: full-width;
-}
-
-.main-headshot {
-    border-radius: 0.5rem;
 }

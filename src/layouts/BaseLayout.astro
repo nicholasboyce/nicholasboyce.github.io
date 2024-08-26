@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import SkipLink from "../components/SkipLink.astro";
+import ThemeIcon from '../components/ThemeIcon.astro';
 import Footer from "../components/Footer.astro";
 const { pageTitle } = Astro.props;
 const mainContent = 'main-content';
@@ -11,6 +12,7 @@ const mainContent = 'main-content';
 		<link rel="icon" type="image/svg+xml" href="/favicon_headshot.jpg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+		<!-- <meta name="color-scheme" content="light dark" /> -->
 		<title>{pageTitle}</title>
 	</head>
 	<body class="content-grid">
@@ -18,9 +20,12 @@ const mainContent = 'main-content';
 			<SkipLink mainContent={mainContent} />
 			<nav>
 				<ul class="nav-links">
-					<li><a href="#projects">Projects</a></li>
-					<li><a href="/blog/">Blog</a></li>
-					<li><a href="#about">About</a></li>
+					<li class="nav-link"><a href="#projects">Projects</a></li>
+					<li class="nav-link"><a href="/blog/">Blog</a></li>
+					<li class="nav-link"><a href="#about">About</a></li>
+					<li>
+						<ThemeIcon />
+					</li>
 				</ul>
 			</nav>
 		</header>
@@ -30,3 +35,35 @@ const mainContent = 'main-content';
 		<Footer />
 	</body>
 </html>
+<style>
+	header {
+		position: sticky;
+		top: -1px;
+	}
+	
+	.nav-links {
+		display: flex;
+		padding-block: var(--gap-500);
+		align-items: center;
+	}
+
+	.nav-link {
+		flex: 1;
+		text-align: center;
+	}
+
+	@media screen and (min-width: 700px) {
+		.nav-links {
+			padding-block-end: 0;
+		}
+		
+		.nav-links > li:nth-child(n + 4) {
+			margin-inline-start: auto;
+		}
+
+		.nav-link {
+			flex: none;
+			margin-inline-end: var(--gap-500);
+		}
+	}
+</style>
