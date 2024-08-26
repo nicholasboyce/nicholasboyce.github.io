@@ -3,6 +3,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
 import headshot from '../assets/Nick_minified.jpg';
 import letsbuilditHomepage from "../assets/letsbuildit_homepage.png";
+import linkcardsHomepage from "../assets/linkcards_homepage.png";
+import shufflifyHomepage from "../assets/shufflify_homepage.png";
 const pageTitle = 'Nicholas Boyce-Software Engineer';
 ---
 <style>
@@ -128,6 +130,10 @@ const pageTitle = 'Nicholas Boyce-Software Engineer';
 
 	.projects-heading {
 		margin-block-end: var(--gap-700);
+		/* background-color: var(--main-background-color);
+		outline: 1px solid var(--main-background-color);
+		position: sticky;
+		top: 78px; */
 	}
 
 	.description-wrapper {
@@ -146,7 +152,23 @@ const pageTitle = 'Nicholas Boyce-Software Engineer';
 	.description-toggle {
 		width: fit-content;
 	}
-	
+
+	.description-toggle::after {
+		content:  " \25BC";
+	}
+
+	.active .description-toggle::after {
+		content:  " \25B2";
+	}
+
+	.about {
+		margin-block-start: var(--gap-500);
+	}
+
+	.about .section-body {
+		margin-block: var(--gap-400);
+	}
+
 	@media screen and (min-width: 830px) {
 		.hero {
 			grid-template-areas: none;
@@ -212,8 +234,8 @@ const pageTitle = 'Nicholas Boyce-Software Engineer';
 						<figcaption>A social project sharing app for finding project collaborators and inspiration.</figcaption>
 					</figure>
 					<div class="description-wrapper">
-						<button class="description-toggle">Show full description</button>
-						<p class="project-description">
+						<button class="description-toggle" aria-live="polite">Show full description</button>
+						<p class="project-description" aria-live="polite">
 							As a software engineer who has largely learned about web development on his own, I often wished that I could more easily find people to work with.
 							I wanted to nurture my growth mindset, but what on Earth was I supposed to build? I knew I wanted to build, but I needed direction. And learning about the possibilities on my own seemed like a gargantuan task.
 							Luckily for me, I was able to find the Recurse Center, full of wonderful people with equally amazing ideas. But what about those who weren't so lucky?
@@ -235,13 +257,20 @@ const pageTitle = 'Nicholas Boyce-Software Engineer';
 			<li class="project">
 				<article>
 					<h2>LinkCards</h2>
-					<p class="project-description">
-						The thing about learning full stack development on your own is that you're often in charge of a lot of aspects that you'd otherwise not see as a software engineer.
-						This includes creating pleasing designs. Once I realized I really wanted to hone in on the actual implementation, I practiced a lot on <a href="https://www.frontendmentor.io/profile/nicholasboyce" target="_blank">Frontend Mentor</a> to simulate 
-						what it would feel like to implement design files from the UI/UX team!
-						<br />
-						This project's design was inspired by one of the exercises there, and I extended it to create a functioning full stack application with user accounts and individual user pages.
-					</p>
+					<figure>
+						<Image src={linkcardsHomepage} alt="LinkCards Homepage screenshot." />
+						<figcaption>A social project sharing app for finding project collaborators and inspiration.</figcaption>
+					</figure>
+					<div class="description-wrapper">
+						<button class="description-toggle" aria-live="polite">Show full description</button>
+						<p class="project-description" aria-live="polite">
+							The thing about learning full stack development on your own is that you're often in charge of a lot of aspects that you'd otherwise not see as a software engineer.
+							This includes creating pleasing designs. Once I realized I really wanted to hone in on the actual implementation, I practiced a lot on <a href="https://www.frontendmentor.io/profile/nicholasboyce" target="_blank">Frontend Mentor</a> to simulate
+							what it would feel like to implement design files from the UI/UX team!
+							<br />
+							This project's design was inspired by one of the exercises there, and I extended it to create a functioning full stack application with user accounts and individual user pages.
+						</p>
+					</div>
 					<ul class="tags" aria-label="Technology used">
 						<li class="tag">React.js</li>
 						<li class="tag">Node.js</li>
@@ -254,12 +283,19 @@ const pageTitle = 'Nicholas Boyce-Software Engineer';
 			<li class="project">
 				<article>
 					<h2>Shufflify</h2>
-					<p class="project-description">
-						Shufflify was my attempt at understanding JavaScript and DOM manipulation on a deeper level. I hadn't started learning React fully yet, and I wanted to make sure I really understood what it was doing for me
-						before simply using it for the sake of having it as a tool. I really learned a lot about how SPAs manage state (and how easy frameworks like React make it!), and I learned a good bit about the OAuth process
-						and interacting with APIs as well. Shufflify was recently approved by the Spotify Developer Team themselves, so please feel free to try it out! As the homepage says,
-						just pick your playlists, shuffle them into a brand new one, and enjoy!
-					</p>
+					<figure>
+						<Image src={shufflifyHomepage} alt="Shufflify Homepage screenshot." />
+						<figcaption>A social project sharing app for finding project collaborators and inspiration.</figcaption>
+					</figure>
+					<div class="description-wrapper">
+						<button class="description-toggle" aria-live="polite">Show full description</button>
+						<p class="project-description" aria-live="polite">
+							Shufflify was my attempt at understanding JavaScript and DOM manipulation on a deeper level. I hadn't started learning React fully yet, and I wanted to make sure I really understood what it was doing for me
+							before simply using it for the sake of having it as a tool. I really learned a lot about how SPAs manage state (and how easy frameworks like React make it!), and I learned a good bit about the OAuth process
+							and interacting with APIs as well. Shufflify was recently approved by the Spotify Developer Team themselves, so please feel free to try it out! As the homepage says,
+							just pick your playlists, shuffle them into a brand new one, and enjoy!
+						</p>
+					</div>
 					<ul class="tags" aria-label="Technology used">
 						<li class="tag">HTML</li>
 						<li class="tag">CSS</li>
@@ -271,12 +307,19 @@ const pageTitle = 'Nicholas Boyce-Software Engineer';
 			<li class="project">
 				<article>
 					<h2>Grenada Land Registry</h2>
-					<p class="project-description">
-						As my first "serious" attempt at making something on my own, I'm very fond of this website. After losing a close family member and deciding to face my fears and become a software engineer,
-						I wanted to try and make something meaningful. What was on my mind was my parents' home country (as well as that of my late relative) Grenada. As beautiful as the island is, the design for their <a href="https://web.archive.org/web/20240302042518/https://elandregistry.gov.gd/" target="_blank">official land registry lookup page</a>
-						left a lot to be desired. I realized this was the perfect chance to practice my new responsive design skills. After completing the frontend, I actually went back and attached a backend to it serve up mock land registry records.
-						I'd really love to improve upon the design and implementation even more in the future (and maybe submit that to the Grenadian government)!
-					</p>
+					<figure>
+						<Image src={letsbuilditHomepage} alt="Let's Build It Homepage screenshot." />
+						<figcaption>A social project sharing app for finding project collaborators and inspiration.</figcaption>
+					</figure>
+					<div class="description-wrapper">
+						<button class="description-toggle" aria-live="polite">Show full description</button>
+						<p class="project-description" aria-live="polite">
+							As my first "serious" attempt at making something on my own, I'm very fond of this website. After losing a close family member and deciding to face my fears and become a software engineer,
+							I wanted to try and make something meaningful. What was on my mind was my parents' home country (as well as that of my late relative) Grenada. As beautiful as the island is, the design for their <a href="https://web.archive.org/web/20240302042518/https://elandregistry.gov.gd/" target="_blank">official land registry lookup page</a>
+							left a lot to be desired. I realized this was the perfect chance to practice my new responsive design skills. After completing the frontend, I actually went back and attached a backend to it serve up mock land registry records.
+							I'd really love to improve upon the design and implementation even more in the future (and maybe submit that to the Grenadian government)!
+						</p>
+					</div>
 					<ul class="tags" aria-label="Technology used">
 						<li class="tag">HTML</li>
 						<li class="tag">CSS</li>
@@ -289,10 +332,24 @@ const pageTitle = 'Nicholas Boyce-Software Engineer';
 			</li>
 		</ul>
 	</section>
-	<section id="about" aria-labelledby="about-heading">
+	<section id="about" aria-labelledby="about-heading" class="about">
 		<h1 id="about-heading">My Story</h1>
 		<p class="section-body">
 			I'm a first-gen college student (and first-gen immigrant) who graduated from Bowdoin College in 2022 with a Bachelor of Arts in Economics. I spent the first year out of college working in investment banking across insurance, healthcare, and fintech companies. After a yearlong sabbatical to attend to my physical and mental health, I've been diving into software engineering to develop my problem solving skills and nourish my creativity. I'm also a never-alum of the <a href="https://www.recurse.com" target="_blank">Recurse Center</a>!
 		</p>
 	</section>
 </BaseLayout>
+<script>
+	const toggleButtons = document.querySelectorAll('.description-toggle');
+	toggleButtons.forEach((button) => {
+		const wrapper = button.parentElement;
+		button.addEventListener('click', () => {
+			if (button.textContent === 'Show full description') {
+				button.textContent = 'Hide description';
+			} else {
+				button.textContent = 'Show full description';
+			}
+			wrapper?.classList.toggle("active");
+		});
+	});
+</script>
