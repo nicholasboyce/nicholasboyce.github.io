@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
 import headshot from '../assets/Nick_minified.jpg';
+import letsbuilditHomepage from "../assets/letsbuildit_homepage.png";
 const pageTitle = 'Nicholas Boyce-Software Engineer';
 ---
 <style>
@@ -88,6 +89,63 @@ const pageTitle = 'Nicholas Boyce-Software Engineer';
 		text-shadow: none;
 		color: var(--clr-accent-indigo);
 	}
+
+	article {
+		display: grid;
+		row-gap: var(--gap-300);
+	}
+
+	h1[id$="-heading"]:not(.hero-heading) {
+		font-size: var(--fs-800);
+	}
+
+	article > h2 {
+		font-size: var(--fs-700);
+	}
+
+	figcaption {
+		margin-block-start: var(--gap-200);
+		font-family: 'merriweather_sansitalic'; /* TBU */
+	}
+
+	.tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--gap-200) var(--gap-300);
+	}
+
+	.tag {
+		background-color: var(--clr-neutral-400);
+		padding: var(--gap-200);
+		border-radius: 0.25rem;
+		color: var(--main-tag-text-color);
+	}
+
+	ul.section-body {
+		display: grid;
+		row-gap: var(--gap-800);
+	}
+
+	.projects-heading {
+		margin-block-end: var(--gap-700);
+	}
+
+	.description-wrapper {
+		display: grid;
+		grid-template-rows: auto 0fr;
+	}
+
+	.description-wrapper.active {
+		grid-template-rows: auto 1fr;
+	}
+
+	.project-description {
+		overflow: hidden;
+	}
+
+	.description-toggle {
+		width: fit-content;
+	}
 	
 	@media screen and (min-width: 830px) {
 		.hero {
@@ -144,19 +202,26 @@ const pageTitle = 'Nicholas Boyce-Software Engineer';
 			alt="Headshot of Nick in a white and light pink striped dress shirt." />
 	</section>
 	<section id="projects" aria-labelledby="projects-heading" class="projects">
-		<h1 id="projects-heading">Projects I've Done</h1>
+		<h1 id="projects-heading" class="projects-heading">Projects I've Done</h1>
 		<ul class="section-body">
 			<li class="project">
 				<article>
 					<h2>Let's Build It! [WIP]</h2>
-					<p class="project-description">
-						As a software engineer who has largely learned about web development on his own, I often wished that I could more easily find people to work with.
-						I wanted to nurture my growth mindset, but what on Earth was I supposed to build? I knew I wanted to build, but I needed direction. And learning about the possibilities on my own seemed like a gargantuan task.
-						Luckily for me, I was able to find the Recurse Center, full of wonderful people with equally amazing ideas. But what about those weren't so lucky?
-						<br/>
-						Enter: Let's Build It. My goal is for this project to connect developers who need a team, or even just some inspiration. The main feature I'm working on now is an accessible search feature.
-						I've already implemented authentication and defined the user schemas. 
-					</p>
+					<figure>
+						<Image src={letsbuilditHomepage} alt="Let's Build It Homepage screenshot." />
+						<figcaption>A social project sharing app for finding project collaborators and inspiration.</figcaption>
+					</figure>
+					<div class="description-wrapper">
+						<button class="description-toggle">Show full description</button>
+						<p class="project-description">
+							As a software engineer who has largely learned about web development on his own, I often wished that I could more easily find people to work with.
+							I wanted to nurture my growth mindset, but what on Earth was I supposed to build? I knew I wanted to build, but I needed direction. And learning about the possibilities on my own seemed like a gargantuan task.
+							Luckily for me, I was able to find the Recurse Center, full of wonderful people with equally amazing ideas. But what about those who weren't so lucky?
+							<br/>
+							Enter: Let's Build It. My goal is for this project to connect developers who need a team, or even just some inspiration. The main feature I'm working on now is an accessible search feature.
+							I've already implemented authentication and defined the user schemas.
+						</p>
+					</div>
 					<ul class="tags" aria-label="Technology used">
 						<li class="tag">React.js</li>
 						<li class="tag">TypeScript</li>

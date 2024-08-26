@@ -3,12 +3,14 @@
     --ff-primary: 'merriweather_sanslight', system-ui, sans-serif;
 
     --clr-neutral-100: hsl(0, 0%, 100%);
+    --clr-neutral-400: hsl(0, 0%, 70%);
     --clr-neutral-1000: hsl(0, 0%, 10%);
     --clr-neutral-1100: hsl(0, 0%, 0%);
 
     --main-background-color: var(--clr-neutral-100);
     --main-text-color: var(--clr-neutral-1100);
     --main-link-color: var(--clr-neutral-1100);
+    --main-tag-color: var(--clr-neutral-400);
 
     --clr-accent-pink: hsl(306, 98%, 76%);
     --clr-accent-orange: hsl(0, 78%, 78%);
@@ -134,6 +136,7 @@ html.dark {
     --main-background-color: var(--clr-neutral-1000);
     --main-text-color: var(--clr-neutral-100);
     --main-link-color: var(--clr-neutral-100);
+    --main-tag-text-color: var(--clr-neutral-1100);
 }
   
 body {
@@ -173,6 +176,12 @@ h1,
 h2,
 h3 {
     font-family: var(--ff-heading);
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    color: var(--main-text-color);
 }
 
 .content-grid {
