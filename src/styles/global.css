@@ -148,3 +148,7 @@ h3 {
 .content-grid > .full-width {
     grid-column: full-width;
 }
+
+.main-headshot {
+    border-radius: 0.5rem;
+}
