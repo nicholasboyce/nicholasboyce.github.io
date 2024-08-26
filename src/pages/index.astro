@@ -7,37 +7,26 @@ const pageTitle = 'Nicholas Boyce-Software Engineer';
 <style>
 	.hero {
 		display: grid;
-		grid-template-areas: 
-		"heading"
-		"picture"
-		"intro";
 		padding-block: var(--gap-300);
 		row-gap: var(--gap-500);
 	}
 
 	.hero-heading {
 		font-size: var(--fs-900);
-		grid-area: heading;
+		grid-row: 1/2;
 		text-align: center;
-	}
-
-	.hero .section-body {
-		grid-area: intro;
-		display: flex;
-		flex-direction: column;
-		row-gap: var(--gap-300);
 	}
 
 	.main-headshot {
 		border-radius: 0.5rem;
-		grid-column: picture;
+		grid-row: picture;
 	}
-
-	@media screen and (min-width: 700px) {
+	
+	@media screen and (min-width: 830px) {
 		.hero {
 			grid-template-areas: none;
 			grid-template-columns: [picture-start] auto [picture-end text-start] auto [text-end];
-			grid-template-rows: [content-start intro-start] 1fr [intro-end body-start]1fr [body-end content-end];
+			grid-template-rows: [content-start] 1fr repeat(4, auto) 1fr [content-end];
 			/* row-gap: 0; */
 			column-gap: var(--gap-600);
 			/* min-height: 100svh; */
@@ -45,15 +34,26 @@ const pageTitle = 'Nicholas Boyce-Software Engineer';
 			min-height: calc(100svh - 54px);
 		}
 
-		.hero .section-body {
+		.hero p {
 			grid-column: text;
-			grid-row: body;
 			font-size: var(--fs-600);
+		}
+
+		.hero p:nth-child(n + 2) {
+			grid-row: 3/4;
+		}
+
+		.hero p:nth-child(n + 3) {
+			grid-row: 4/5;
+		}
+
+		.hero p:nth-child(n + 4) {
+			grid-row: 5/6;
 		}
 
 		.hero-heading {
 			grid-column: text;
-			grid-row: intro;
+			grid-row: 2/3;
 			align-self: self-end;
 			text-align: justify;
 		}
@@ -67,11 +67,9 @@ const pageTitle = 'Nicholas Boyce-Software Engineer';
 <BaseLayout pageTitle={pageTitle}>
 	<section id="hero" aria-labelledby="hero-heading" class="hero">
 		<h1 id="hero-heading" class="hero-heading">Hi! I'm Nick.</h1>
-		<div class="section-body">
 			<p>I’m a <span class="value-word">curious</span>, <span class="value-word">driven</span>, and <span class="value-word">inquisitive</span> software engineer.</p>
 			<p>I value <span class="value-word">empathy</span> and <span class="value-word">connection</span>, and thrive in teams that prioritize a <span class="value-word">growth mindset</span>.</p>
 			<p>I love making a <span class="value-word">positive impact</span> and being surrounded by those who care - and that’s probably you!</p>
-		</div>
 		<Image
 			class="main-headshot"
 			src={headshot}
