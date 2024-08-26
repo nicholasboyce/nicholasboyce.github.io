@@ -1,5 +1,5 @@
 ---
-const { platform, username } = Astro.props;
+const { platform, username, TLD } = Astro.props;
 ---
 
 <style>
@@ -11,4 +11,4 @@ const { platform, username } = Astro.props;
     }
 </style>
 
-<a href={`https://www.${platform}.com/${username}`} target="_blank">{platform}</a>
+<a href={`https://www.${platform.replace(' ', '')}.${TLD}${username}`} target="_blank">{platform}</a>

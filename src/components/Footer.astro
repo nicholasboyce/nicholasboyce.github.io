@@ -2,13 +2,16 @@
 import Social from "./Social.astro";
 const socials = [{
     platform: 'Github',
-    username: 'nicholasboyce'
+    username: 'nicholasboyce',
+    TLD: 'com/'
 }, {
     platform: 'Frontend Mentor',
-    username: 'nicholasboyce'
+    username: 'nicholasboyce',
+    TLD: 'io/profile/'
 }, {
     platform: 'LinkedIn',
-    username: 'nicholasboyce'
+    username: 'nicholasboyce',
+    TLD: 'com/in/'
 }];
 ---
 <style>
@@ -23,5 +26,5 @@ const socials = [{
 </style>
 
 <footer>
-  {socials.map((media) => <Social platform={media.platform} username={media.username} />)}
+  {socials.map((media) => <Social platform={media.platform} username={media.username} TLD={media.TLD} />)}
 </footer>
