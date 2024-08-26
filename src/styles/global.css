@@ -8,6 +8,7 @@
 
     --main-background-color: var(--clr-neutral-100);
     --main-text-color: var(--clr-neutral-1100);
+    --main-link-color: var(--clr-neutral-1100);
 
     --clr-accent-pink: hsl(306, 98%, 76%);
     --clr-accent-orange: hsl(0, 78%, 78%);
@@ -132,6 +133,7 @@ html {
 html.dark {
     --main-background-color: var(--clr-neutral-1000);
     --main-text-color: var(--clr-neutral-100);
+    --main-link-color: var(--clr-neutral-100);
 }
   
 body {
@@ -154,6 +156,17 @@ li {
 
 a {
     text-decoration: none;
+    color: var(--main-link-color);
+}
+
+a:hover,
+a:focus {
+    background-color: var(--clr-neutral-1000);
+}
+
+a:link,
+a:visited {
+    color: var(--main-link-color);
 }
 
 h1,
