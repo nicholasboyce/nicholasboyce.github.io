@@ -8,7 +8,6 @@ const pageTitle = 'Nicholas Boyce-Software Engineer';
 	.hero {
 		display: grid;
 		padding-block: var(--gap-300);
-		row-gap: var(--gap-500);
 	}
 
 	.hero-heading {
@@ -19,7 +18,75 @@ const pageTitle = 'Nicholas Boyce-Software Engineer';
 
 	.main-headshot {
 		border-radius: 0.5rem;
-		grid-row: picture;
+		grid-row: 2/3;
+		margin-block: var(--gap-500);
+	}
+
+	.hero p:not(:last-child) {
+		margin-block-end: var(--gap-300);
+	}
+
+	.value-word-pink {
+		text-shadow: 0.25rem 0.25rem 0.25rem var(--clr-accent-pink);
+	}
+
+	html.dark .value-word-pink {
+		text-shadow: none;
+		color: var(--clr-accent-pink);
+	}
+
+	.value-word-orange {
+		text-shadow: 0.25rem 0.25rem 0.25rem var(--clr-accent-orange);
+	}
+
+	html.dark .value-word-orange {
+		text-shadow: none;
+		color: var(--clr-accent-orange);
+	}
+
+	.value-word-yellow {
+		text-shadow: 0.25rem 0.25rem 0.25rem var(--clr-accent-yellow);
+	}
+
+	html.dark .value-word-yellow {
+		text-shadow: none;
+		color: var(--clr-accent-yellow);
+	}
+
+	.value-word-blue {
+		text-shadow: 0.25rem 0.25rem 0.25rem var(--clr-accent-blue);
+	}
+
+	html.dark .value-word-blue {
+		text-shadow: none;
+		color: var(--clr-accent-blue);
+	}
+
+	.value-word-green {
+		text-shadow: 0.25rem 0.25rem 0.25rem var(--clr-accent-green);
+	}
+
+	html.dark .value-word-green {
+		text-shadow: none;
+		color: var(--clr-accent-green);
+	}
+
+	.value-word-purple {
+		text-shadow: 0.25rem 0.25rem 0.25rem var(--clr-accent-purple);
+	}
+
+	html.dark .value-word-purple {
+		text-shadow: none;
+		color: var(--clr-accent-purple);
+	}
+
+	.value-word-indigo {
+		text-shadow: 0.25rem 0.25rem 0.25rem var(--clr-accent-indigo);
+	}
+
+	html.dark .value-word-indigo {
+		text-shadow: none;
+		color: var(--clr-accent-indigo);
 	}
 	
 	@media screen and (min-width: 830px) {
@@ -37,6 +104,7 @@ const pageTitle = 'Nicholas Boyce-Software Engineer';
 		.hero p {
 			grid-column: text;
 			font-size: var(--fs-600);
+			margin-block-start: var(--gap-400);
 		}
 
 		.hero p:nth-child(n + 2) {
@@ -67,9 +135,9 @@ const pageTitle = 'Nicholas Boyce-Software Engineer';
 <BaseLayout pageTitle={pageTitle}>
 	<section id="hero" aria-labelledby="hero-heading" class="hero">
 		<h1 id="hero-heading" class="hero-heading">Hi! I'm Nick.</h1>
-			<p>I’m a <span class="value-word">curious</span>, <span class="value-word">driven</span>, and <span class="value-word">inquisitive</span> software engineer.</p>
-			<p>I value <span class="value-word">empathy</span> and <span class="value-word">connection</span>, and thrive in teams that prioritize a <span class="value-word">growth mindset</span>.</p>
-			<p>I love making a <span class="value-word">positive impact</span> and being surrounded by those who care - and that’s probably you!</p>
+			<p>I’m a <span class="value-word-pink">curious</span>, <span class="value-word-purple">driven</span>, and <span class="value-word-orange">inquisitive</span> software engineer.</p>
+			<p>I value <span class="value-word-blue">empathy</span> and <span class="value-word-green">connection</span>, and thrive in teams that prioritize a <span class="value-word-indigo">growth mindset</span>.</p>
+			<p>I love making a <span class="value-word-yellow">positive impact</span> and being surrounded by those who care - and that’s probably you!</p>
 		<Image
 			class="main-headshot"
 			src={headshot}
@@ -159,7 +227,7 @@ const pageTitle = 'Nicholas Boyce-Software Engineer';
 	<section id="about" aria-labelledby="about-heading">
 		<h1 id="about-heading">My Story</h1>
 		<p class="section-body">
-			I graduated from Bowdoin College in 2022 with a Bachelor of Arts in Economics. I spent the first year out of college working in investment banking across insurance, healthcare, and fintech companies. After a yearlong sabbatical to attend to my physical and mental health, I've been diving into software engineering to develop my problem solving skills and nourish my creativity. I'm also a never-alum of the <a href="https://www.recurse.com" target="_blank">Recurse Center</a>!
+			I'm a first-gen college student (and first-gen immigrant) who graduated from Bowdoin College in 2022 with a Bachelor of Arts in Economics. I spent the first year out of college working in investment banking across insurance, healthcare, and fintech companies. After a yearlong sabbatical to attend to my physical and mental health, I've been diving into software engineering to develop my problem solving skills and nourish my creativity. I'm also a never-alum of the <a href="https://www.recurse.com" target="_blank">Recurse Center</a>!
 		</p>
 	</section>
 </BaseLayout>

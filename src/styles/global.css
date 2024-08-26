@@ -2,6 +2,18 @@
     --ff-heading: 'merriweatherlight', system-ui, serif;
     --ff-primary: 'merriweather_sanslight', system-ui, sans-serif;
 
+    --clr-neutral-100: hsl(0, 0%, 100%);
+    --clr-neutral-1000: hsl(0, 0%, 10%);
+    --clr-neutral-1100: hsl(0, 0%, 0%);
+
+    --clr-accent-pink: hsl(306, 98%, 76%);
+    --clr-accent-orange: hsl(0, 78%, 78%);
+    --clr-accent-yellow: hsl(61, 98%, 82%);
+    --clr-accent-green: hsl(122, 100%, 75%);
+    --clr-accent-blue: hsl(180, 91%, 72%);
+    --clr-accent-purple: hsl(284, 86%, 75%);
+    --clr-accent-indigo: hsl(275, 55%, 65%);
+
     --fs-100: 0.75rem;
     --fs-200: 0.875rem;
     --fs-400: 1rem;
@@ -118,7 +130,12 @@ body {
     min-height: 100svh;
     font-family: var(--ff-primary);
 }
-  
+
+.dark body {
+    background-color: var(--clr-neutral-1000);
+    color: var(--clr-neutral-100);
+}
+
 img {
     vertical-align: middle;
     max-width: 100%;
