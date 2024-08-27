@@ -1,0 +1,19 @@
+---
+const { url, title, description, date } = Astro.props;
+---
+<style>
+    h2 {
+        font-size: var(--fs-700);
+        font-family: 'merriweatherregular';
+    }
+
+    li {
+        display: grid;
+        row-gap: var(--gap-400);
+    }
+</style>
+<li>
+    <a href={url} class="title"><h2>{title}</h2></a>
+    <p class="description">{description}</p>
+    <p class="date">{date.toString().slice(0,10)}</p>
+</li>

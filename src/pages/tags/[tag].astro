@@ -1,0 +1,60 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogPost from '../../components/BlogPost.astro';
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection("posts");
+  const uniqueTags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
+
+  return uniqueTags.map((tag) => {
+    return {
+      params: { tag },
+      props: { posts: allPosts.filter((post) => post.data.tags?.includes(tag)) }
+    }
+  });
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+<style>
+    .center-align {
+        text-align: center;
+    }
+
+    h1 {
+        margin-block: var(--gap-400);
+        font-size: clamp(var(--fs-750), 1.509rem + 1.101vw, var(--fs-800));
+    }
+
+    .wrapper {
+        --content-max-width: 50ch;
+        --padding-inline: var(--gap-500);
+
+        display: grid;
+        grid-template-columns: minmax(var(--padding-inline), 1fr) [content-start] min((100% - (var(--padding-inline) * 2)), var(--content-max-width)) [content-end] minmax(var(--padding-inline), 1fr);
+    }
+
+    .wrapper > * {
+        grid-column: content;
+    }
+
+    ul {
+        margin-block: var(--gap-500);
+    }
+
+    @media screen and (min-width: 830px) {
+        h1 {
+            margin-block-start: var(--gap-800);
+        }
+    }
+</style>
+<BaseLayout pageTitle={tag}>
+  <div class="wrapper">
+      <h1 class="center-align">Posts tagged with {tag}</h1>
+      <ul>
+        {posts.map((post) => <BlogPost url={`/posts/${post.slug}`} title={post.data.title} description={post.data.description} date={post.data.pubDate} />)}
+      </ul>
+  </div>
+</BaseLayout>

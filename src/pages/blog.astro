@@ -1,6 +1,52 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro"
+import { getCollection } from 'astro:content';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TagList from "../components/TagList.astro";
+import BlogPost from '../components/BlogPost.astro';
 const pageTitle = "My Blog";
+
+const posts = await getCollection("posts");
 ---
+<style>
+    .center-align {
+        text-align: center;
+    }
+
+    h1 {
+        margin-block: var(--gap-400);
+        font-size: clamp(var(--fs-750), 1.509rem + 1.101vw, var(--fs-800));
+    }
+
+    article {
+        --content-max-width: 50ch;
+        --padding-inline: var(--gap-500);
+
+        display: grid;
+        grid-template-columns: minmax(var(--padding-inline), 1fr) [content-start] min((100% - (var(--padding-inline) * 2)), var(--content-max-width)) [content-end] minmax(var(--padding-inline), 1fr);
+    }
+
+    article > * {
+        grid-column: content;
+    }
+
+    ul {
+        margin-block: var(--gap-500);
+    }
+
+    @media screen and (min-width: 830px) {
+        h1 {
+            margin-block-start: var(--gap-800);
+        }
+    }
+</style>
 <BaseLayout pageTitle={pageTitle}>
+    <article>
+        <h1 class="center-align">Check out all of my latest posts!</h1>
+        <ul>
+            {posts.map((post) => <BlogPost url={`/posts/${post.slug}`} title={post.data.title} description={post.data.description} date={post.data.pubDate} />)}
+        </ul>
+        <div>
+            <TagList />
+        </div>
+    </article>
 </BaseLayout>

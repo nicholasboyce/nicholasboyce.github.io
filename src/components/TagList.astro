@@ -1,0 +1,31 @@
+---
+import { getCollection } from "astro:content";
+let { uniqueTags } = Astro.props;
+if (!uniqueTags) {
+    const allPosts = await getCollection("posts");
+    uniqueTags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
+}
+---
+<style>
+    a {
+      color: #00539F;
+    }
+  
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  
+    .tag {
+      margin: 0.25em;
+      border: dotted 1px #a1a1a1;
+      border-radius: .5em;
+      padding: .5em 1em;
+      font-size: 1.15em;
+      background-color: #F8FCFD;
+      list-style: none;
+    }
+</style>
+<ul class="tags">
+    {uniqueTags.map((tag: string) => <li class="tag"><a href={`/tags/${tag}`}>{tag}</a></li>)}
+</ul>
