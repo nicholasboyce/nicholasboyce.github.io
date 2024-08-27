@@ -3,12 +3,53 @@ import BaseLayout from "./BaseLayout.astro";
 // import TagList from "../components/TagList.astro";
 const { frontmatter } = Astro.props;
 ---
+<style>
+    .pageTitle {
+        margin-block: var(--gap-400);
+        font-size: clamp(var(--fs-750), 1.509rem + 1.101vw, var(--fs-850));
+    }
+
+    .center-align {
+        text-align: center;
+    }
+
+    article {
+        --content-max-width: 50ch;
+        --padding-inline: var(--gap-500);
+
+        display: grid;
+        grid-template-columns: minmax(var(--padding-inline), 1fr) [content-start] min((100% - (var(--padding-inline) * 2)), var(--content-max-width)) [content-end] minmax(var(--padding-inline), 1fr);
+    }
+
+    article > * {
+        grid-column: content;
+    }
+
+    .date {
+        margin-block-start: var(--gap-300);
+    }
+
+    .article-body {
+        margin-block-start: var(--gap-600);
+
+    }
+
+    @media screen and (min-width: 830px) {
+        .pageTitle {
+            margin-block-start: var(--gap-800);
+        }
+    }
+
+</style>
 <BaseLayout pageTitle={frontmatter.title}>
     <article>
+        <h1 class="pageTitle center-align">{frontmatter.title}</h1>
+        <p class="subtitle center-align"><em>{frontmatter.description}</em></p>
         <!-- <img src={frontmatter.image.url} alt={frontmatter.image.alt}> -->
-        <p>Published on: {frontmatter.pubDate.toString().slice(0,10)}</p>
-        <p><em>{frontmatter.description}</em></p>
-        <slot />
+        <p class="date center-align">Published on: {frontmatter.pubDate.toString().slice(0,10)}</p>
+        <div class="article-body">
+            <slot />
+        </div>
     </article>
     <!-- <TagList uniqueTags={frontmatter.tags?.map((tag) => tag)}/> -->
 </BaseLayout>
