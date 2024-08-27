@@ -26,8 +26,10 @@
     --fs-500: 1.125rem;
     --fs-600: 1.25rem;
     --fs-700: 1.5rem;
+    --fs-750: 1.75rem;
     --fs-800: 2rem;
     --fs-825: 2.25rem;
+    --fs-850: 2.5rem;
     --fs-900: 3rem;
     --fs-1000: 3.375rem;
     --fs-1200: 4rem;
@@ -196,6 +198,8 @@ button {
     [content-end]
     minmax(var(--padding-inline), 1fr)
     [full-width-end];
+
+    grid-template-rows: auto 1fr auto;
 }
 
 .content-grid > :not(.full-width) {
