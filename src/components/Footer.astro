@@ -15,16 +15,21 @@ const socials = [{
 }];
 ---
 <style>
-    footer {
+    p {
+      text-align: center;
+    }
+    
+    .socials-wrapper {
       display: flex;
       gap: 1rem;
-      margin-top: 2rem;
+      margin-block: var(--gap-300) var(--gap-600);
       justify-content: center;
-      width: 80%;
-      margin-inline: auto;
+      /* width: 80%;
+      margin-inline: auto; */
     }
 </style>
 
 <footer>
-  {socials.map((media) => <Social platform={media.platform} username={media.username} TLD={media.TLD} />)}
+  <p>My Socials:</p>
+  <div class="socials-wrapper">{socials.map((media) => <Social platform={media.platform} username={media.username} TLD={media.TLD} />)}</div>
 </footer>

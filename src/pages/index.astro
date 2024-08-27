@@ -5,6 +5,7 @@ import headshot from '../assets/Nick_minified.jpg';
 import letsbuilditHomepage from "../assets/letsbuildit_homepage.png";
 import linkcardsHomepage from "../assets/linkcards_homepage.png";
 import shufflifyHomepage from "../assets/shufflify_homepage.png";
+import gdHomepage from "../assets/gd_homepage.png";
 const pageTitle = 'Nicholas Boyce-Software Engineer';
 ---
 <style>
@@ -101,8 +102,22 @@ const pageTitle = 'Nicholas Boyce-Software Engineer';
 		font-size: var(--fs-800);
 	}
 
-	article > h2 {
+	article h2 {
 		font-size: var(--fs-700);
+	}
+
+	article h2::after {
+		content: "";
+		display: inline-block;
+		width: 0.8em;
+		height: 0.8em;
+		margin-left: 0.25em;
+		background-size: 100%;
+		background-image: url('../assets/external-link.png');
+	}
+
+	html.dark h2::after {
+		background-image: url('../assets/external-link-light.png');
 	}
 
 	figcaption {
@@ -139,6 +154,7 @@ const pageTitle = 'Nicholas Boyce-Software Engineer';
 	.description-wrapper {
 		display: grid;
 		grid-template-rows: auto 0fr;
+		row-gap: var(--gap-200);
 	}
 
 	.description-wrapper.active {
@@ -162,11 +178,19 @@ const pageTitle = 'Nicholas Boyce-Software Engineer';
 	}
 
 	.about {
-		margin-block-start: var(--gap-500);
+		margin-block-start: var(--gap-700);
 	}
 
 	.about .section-body {
 		margin-block: var(--gap-400);
+	}
+
+	.recurse {
+		color: hsl(275, 55%, 30%);
+	}
+
+	html.dark .recurse {
+		color: var(--clr-accent-orange);
 	}
 
 	@media screen and (min-width: 830px) {
@@ -210,6 +234,10 @@ const pageTitle = 'Nicholas Boyce-Software Engineer';
 			grid-row: content;
 			align-self: center;
 		}
+
+		.description-wrapper {
+			transition: grid-template-rows 500ms ease;
+		}
 	}
 </style>
 <BaseLayout pageTitle={pageTitle}>
@@ -228,7 +256,9 @@ const pageTitle = 'Nicholas Boyce-Software Engineer';
 		<ul class="section-body">
 			<li class="project">
 				<article>
-					<h2>Let's Build It! [WIP]</h2>
+					<a href="https://github.com/nicholasboyce/letsbuildit" target="_blank">
+						<h2>Let's Build It! [WIP]</h2>
+					</a>
 					<figure>
 						<Image src={letsbuilditHomepage} alt="Let's Build It Homepage screenshot." />
 						<figcaption>A social project sharing app for finding project collaborators and inspiration.</figcaption>
@@ -256,10 +286,12 @@ const pageTitle = 'Nicholas Boyce-Software Engineer';
 			</li>
 			<li class="project">
 				<article>
-					<h2>LinkCards</h2>
+					<a href="https://github.com/nicholasboyce/linkcards" target="_blank">
+						<h2>LinkCards</h2>
+					</a>
 					<figure>
 						<Image src={linkcardsHomepage} alt="LinkCards Homepage screenshot." />
-						<figcaption>A social project sharing app for finding project collaborators and inspiration.</figcaption>
+						<figcaption>A convenient all in one place social link sharing app.</figcaption>
 					</figure>
 					<div class="description-wrapper">
 						<button class="description-toggle" aria-live="polite">Show full description</button>
@@ -282,10 +314,14 @@ const pageTitle = 'Nicholas Boyce-Software Engineer';
 			</li>
 			<li class="project">
 				<article>
-					<h2>Shufflify</h2>
+					<a href="https://github.com/nicholasboyce/shufflify" target="_blank">
+						<h2>Shufflify</h2>
+					</a>
 					<figure>
-						<Image src={shufflifyHomepage} alt="Shufflify Homepage screenshot." />
-						<figcaption>A social project sharing app for finding project collaborators and inspiration.</figcaption>
+						<a href="https://shufflify.app" target="_blank">
+							<Image src={shufflifyHomepage} alt="Visit the Shufflify homepage." />
+						</a>
+						<figcaption>A Spotify-approved app that randomly shuffles multiple given playlists to one.</figcaption>
 					</figure>
 					<div class="description-wrapper">
 						<button class="description-toggle" aria-live="polite">Show full description</button>
@@ -306,10 +342,14 @@ const pageTitle = 'Nicholas Boyce-Software Engineer';
 			</li>
 			<li class="project">
 				<article>
-					<h2>Grenada Land Registry</h2>
+					<a href="https://github.com/nicholasboyce/gd-project" target="_blank">
+						<h2>Grenada Land Registry</h2>
+					</a>
 					<figure>
-						<Image src={letsbuilditHomepage} alt="Let's Build It Homepage screenshot." />
-						<figcaption>A social project sharing app for finding project collaborators and inspiration.</figcaption>
+						<a href="https://gd-project.onrender.com" target="_blank">
+							<Image src={gdHomepage} alt="Visit my redesign of the Grenada Land Registry homepage." />
+						</a>
+						<figcaption>A responsive redesign of the Grenada Land Registry Lookup website.</figcaption>
 					</figure>
 					<div class="description-wrapper">
 						<button class="description-toggle" aria-live="polite">Show full description</button>
@@ -335,7 +375,7 @@ const pageTitle = 'Nicholas Boyce-Software Engineer';
 	<section id="about" aria-labelledby="about-heading" class="about">
 		<h1 id="about-heading">My Story</h1>
 		<p class="section-body">
-			I'm a first-gen college student (and first-gen immigrant) who graduated from Bowdoin College in 2022 with a Bachelor of Arts in Economics. I spent the first year out of college working in investment banking across insurance, healthcare, and fintech companies. After a yearlong sabbatical to attend to my physical and mental health, I've been diving into software engineering to develop my problem solving skills and nourish my creativity. I'm also a never-alum of the <a href="https://www.recurse.com" target="_blank">Recurse Center</a>!
+			I'm a first-gen college student (and first-gen immigrant) who graduated from Bowdoin College in 2022 with a Bachelor of Arts in Economics. I spent the first year out of college working in investment banking across insurance, healthcare, and fintech companies. After a yearlong sabbatical to attend to my physical and mental health, I've been diving into software engineering to develop my problem solving skills and nourish my creativity. I'm also a never-alum of the <a href="https://www.recurse.com" target="_blank" class="recurse">Recurse Center</a>!
 		</p>
 	</section>
 </BaseLayout>
