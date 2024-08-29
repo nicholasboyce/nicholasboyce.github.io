@@ -14,7 +14,7 @@ const { frontmatter } = Astro.props;
     }
 
     article {
-        --content-max-width: 50ch;
+        --content-max-width: 70ch;
         --padding-inline: var(--gap-500);
 
         display: grid;
@@ -31,7 +31,7 @@ const { frontmatter } = Astro.props;
 
     .article-body {
         margin-block-start: var(--gap-600);
-
+        line-height: 2;
     }
 
     @media screen and (min-width: 830px) {
