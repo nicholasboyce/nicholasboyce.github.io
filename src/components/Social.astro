@@ -1,14 +1,15 @@
 ---
-const { platform, username, TLD } = Astro.props;
+const { platform, username, TLD, icon } = Astro.props;
 ---
 
-<!-- <style>
-    a {
-      padding: 0.5rem 1rem;
-      color: white;
-      background-color: #4c1d95;
-      text-decoration: none;
-    }
-</style> -->
+<style>
+  svg {
+    fill: var(--clr-neutral-1100);
+  }
 
-<a href={`https://www.${platform.replace(' ', '')}.${TLD}${username}`} target="_blank">{platform}</a>
+  html.dark svg {
+    fill: var(--clr-neutral-100);
+  }
+</style>
+
+<a href={`https://www.${platform.replace(' ', '')}.${TLD}${username}`} target="_blank" set:html={icon} aria-label=`Check out my ${platform}`></a>
