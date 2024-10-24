@@ -1,7 +1,7 @@
 ---
 title: 'Questions on Database Terms'
 pubDate: 2024-10-06
-description: 'Reviving My Why'
+description: 'What the heck is a page anyway??'
 tags: ["love of learning", "recurse center", "setbacks", "growth mindset", "data structures", "b-trees", "databases", "pages"]
 ---
 
