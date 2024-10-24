@@ -2,7 +2,7 @@
 title: 'Breaking the Doubt Barrier'
 pubDate: 2024-10-24
 description: 'On Managing My Daily Dose of Doubt'
-tags: ["learning in public", "recurse center", "setbacks", "growth mindset"]
+tags: ["learning in public", "recurse center", "setbacks", "growth mindset", "doubt"]
 ---
 
 I doubt myself a LOT. And honestly, it's been that way for some time. As far back as I can remember, I've been given reasons to doubt myself and what I can do. But it also arose from something honest and enduring - a desire for a rock solid truth. I think that my sense of self-doubt is also related to my unsatiable drive to be better and do more. And yet that doubt can be so great that it prevents me from really finding out what I can do.
