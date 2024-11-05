@@ -5,6 +5,8 @@ description: 'Building a Tic-Tac-Toe Solver
 tags: ["learning in public", "recurse center", "setbacks", "growth mindset", "trees", "tic-tac-toe", "minimax", "game trees"]
 ---
 
+View the [code](https://github.com/nicholasboyce/tictactoe) for this blog post.
+
 ## Introduction
 This past week on Halloween, I gave a presentation at the Recurse Center on what I learned about game trees and the minimax algorithm! And I promised to give a more in-depth technical explanation of the information presented.
 
