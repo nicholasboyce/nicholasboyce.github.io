@@ -5,7 +5,7 @@ description: 'Building a Tic-Tac-Toe Solver'
 tags: ["learning in public", "recurse center", "setbacks", "growth mindset", "trees", "tic-tac-toe", "minimax", "game trees"]
 ---
 
-View the [code](https://github.com/nicholasboyce/tictactoe) for this blog post.
+View the **[code](https://github.com/nicholasboyce/tictactoe)** for this blog post.
 
 ## Introduction
 This past week on Halloween, I gave a presentation at the Recurse Center on what I learned about game trees and the minimax algorithm! And I promised to give a more in-depth technical explanation of the information presented.
@@ -63,7 +63,9 @@ Another really cool thing about the minimax algorithm is that it's a type of dep
 
 And backtracking in this case tends to be an alteration of a post-order traversal, meaning that each child of a given position P is traversed, and THEN the "visit" action for P itself is completed. Here, that means the (optimal) value for the current board has been determined so we can ```return optimal```!
 
+Figure 1
 ![Post-order traversal psuedocode.](../../assets/postorder_traversal.png)
+Note: From "Data Structures And Algorithms in Python" (p. 329), by M.H. Goldwater, M.T. Goodrich, and R. Tamassia, 2013, Hoboken, NJ, John Wiley & Sons.
 
 ## Setbacks
 Although I had successfully built the scaffolding for the rest of my tic-tac-toe game, while implementing ```_minimax()```, I had a bit of trouble. I had had in mind that I could keep the list of available positions for the current player as a Python set, so that in the future I could more quickly keep track of the available slots across rounds for easy look up (checking if a move was valid) and check if the board was full (though this is somewhat trivial regardless). However, in my head, I was thinking and using the list more like a circular queue. As a result, when I popped and appended moves from the available set, I found that my AI was not very... intelligent. Every single game, it played the same moves in the same order - it was merely choosing the "next" available move as it appeared in the set in memory.
@@ -72,7 +74,7 @@ I was so confused at first - how could that be? Until I sat down and drew out a 
 
 I realized that I was using the wrong data structure for how I visualized my program, and decided to use a Python deque as a queue (round-robin scheduler) to match how it worked in my head.
 
-![A round-robin scheduler.](../../assets/roundrobin.png)
+![A round-robin scheduler.](../../assets/roundrobin.png)Note: From "Data Structures And Algorithms in Python" (p. 267), by M.H. Goldwater, M.T. Goodrich, and R. Tamassia, 2013, Hoboken, NJ, John Wiley & Sons.
 
 This way, I could guarantee that the next child node would always be on the left (at index 0), which would allow all possibilities to be traversed properly.
 
