@@ -1,7 +1,7 @@
 ---
 title: "Understanding Game Trees (Part 2)"
 pubDate: 2024-11-01
-description: 'Building a Tic-Tac-Toe Solver
+description: 'Building a Tic-Tac-Toe Solver'
 tags: ["learning in public", "recurse center", "setbacks", "growth mindset", "trees", "tic-tac-toe", "minimax", "game trees"]
 ---
 
