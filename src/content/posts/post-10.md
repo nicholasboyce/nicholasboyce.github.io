@@ -145,7 +145,7 @@ Computer Plays Second, Alpha-Beta Optimization:
 Wow! To focus on the most dramatic difference, check out that first move where the computer has analyze the best move from the empty game tree.
 
 From an average decision time of 646.5001 ms to 42.1356 ms - that's a speed up of 15.3433 times!
-So that data speak for themselves here; alpha-beta pruning is really an incredible optimization technique. Even playing the game myself, the difference was immediately noticeable.
+So those data speak for themselves here; alpha-beta pruning is really an incredible optimization technique. Even playing the game myself, the difference was immediately noticeable.
 
 
 ## Setbacks
