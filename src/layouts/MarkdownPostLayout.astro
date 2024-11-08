@@ -36,6 +36,14 @@ const { frontmatter } = Astro.props;
         row-gap: var(--gap-500);
     }
 
+    .article-body :link {
+        color: hsl(240, 100%, 47%);
+    }
+
+    .article-body :visited {
+        color: hsl(271, 68%, 32%);
+    }
+
     @media screen and (min-width: 830px) {
         .pageTitle {
             margin-block-start: var(--gap-800);
