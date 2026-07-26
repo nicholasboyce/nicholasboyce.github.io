@@ -44,7 +44,7 @@ posts.reverse();
     <article>
         <h1 class="center-align">Check out all of my latest posts!</h1>
         <ul>
-            {posts.map((post) => <BlogPost url={`/posts/${post.slug}`} title={post.data.title} description={post.data.description} date={post.data.pubDate} />)}
+            {posts.map((post) => <BlogPost url={`/posts/${post.id}`} title={post.data.title} description={post.data.description} date={post.data.pubDate} />)}
         </ul>
         <div>
             <TagList />
